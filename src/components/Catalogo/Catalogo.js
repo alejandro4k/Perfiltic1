@@ -66,6 +66,8 @@ class Catalogo extends Component {
         );
       });
       CatalogoContent = <div className="row">{cardCategorias}</div>;
+    }else{
+        CatalogoContent=<h1>No hay productos.</h1>
     }
     switch (this.state.subcomponent) {
       case 1:
