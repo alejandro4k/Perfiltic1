@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/Perfiltic1/static/css/main.465196d8.chunk.css",
-    "main.js": "/Perfiltic1/static/js/main.6a72426f.chunk.js",
-    "main.js.map": "/Perfiltic1/static/js/main.6a72426f.chunk.js.map",
+    "main.js": "/Perfiltic1/static/js/main.7eaaf6a4.chunk.js",
+    "main.js.map": "/Perfiltic1/static/js/main.7eaaf6a4.chunk.js.map",
     "runtime-main.js": "/Perfiltic1/static/js/runtime-main.10883f9b.js",
     "runtime-main.js.map": "/Perfiltic1/static/js/runtime-main.10883f9b.js.map",
     "static/js/2.0bfa852b.chunk.js": "/Perfiltic1/static/js/2.0bfa852b.chunk.js",
     "static/js/2.0bfa852b.chunk.js.map": "/Perfiltic1/static/js/2.0bfa852b.chunk.js.map",
     "index.html": "/Perfiltic1/index.html",
-    "precache-manifest.0f861369340f9b570bba6614efeb1f3e.js": "/Perfiltic1/precache-manifest.0f861369340f9b570bba6614efeb1f3e.js",
+    "precache-manifest.b0f0a4bf75eb0fc7d1b4b3176a8b5ebb.js": "/Perfiltic1/precache-manifest.b0f0a4bf75eb0fc7d1b4b3176a8b5ebb.js",
     "service-worker.js": "/Perfiltic1/service-worker.js",
     "static/css/main.465196d8.chunk.css.map": "/Perfiltic1/static/css/main.465196d8.chunk.css.map",
     "static/js/2.0bfa852b.chunk.js.LICENSE.txt": "/Perfiltic1/static/js/2.0bfa852b.chunk.js.LICENSE.txt",
@@ -19,6 +19,6 @@
     "static/js/runtime-main.10883f9b.js",
     "static/js/2.0bfa852b.chunk.js",
     "static/css/main.465196d8.chunk.css",
-    "static/js/main.6a72426f.chunk.js"
+    "static/js/main.7eaaf6a4.chunk.js"
   ]
 }
