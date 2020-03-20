@@ -105,7 +105,7 @@ class DetalleProducto extends Component {
             <h5>Dolares: ${dolares}</h5>
           </div>
           <div className="col-12">
-            <button type="button" class="btn btn-info btnComprar" data-toggle="modal" data-target="#centralModalSuccess">
+            <button type="button" class="btn btn-info btnComprar" data-toggle="modal" data-target="#ignismyModal">
               Comprar
             </button>
             <button type="button" onClick={()=>this.props.changeSubcomponente(3,this.state.objProducto.id_categoria)}  class="btn btn-info btnComprar">
@@ -115,39 +115,28 @@ class DetalleProducto extends Component {
             </div>
         </div>
 
-        <div class="modal fade" id="centralModalSuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-   aria-hidden="true">
-   <div class="modal-dialog modal-notify modal-success" role="document">
-     
-     <div class="modal-content">
-      
-       <div class="modal-header">
-         <p class="heading lead">Modal Success</p>
-
-         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-           <span aria-hidden="true" class="white-text">&times;</span>
-         </button>
-       </div>
-
-      
-       <div class="modal-body">
-         <div class="text-center">
-           <i class="fas fa-check fa-4x mb-3 animated rotateIn"></i>
-           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit iusto nulla aperiam blanditiis
-             ad consequatur in dolores culpa, dignissimos, eius non possimus fugiat. Esse ratione fuga, enim,
-             ab officiis totam.</p>
-         </div>
-       </div>
-
-     
-       <div class="modal-footer justify-content-center">
-         <a type="button" class="btn btn-success">Get it now <i class="far fa-gem ml-1 text-white"></i></a>
-         <a type="button" class="btn btn-outline-success waves-effect" data-dismiss="modal">No, thanks</a>
-       </div>
-     </div>
- 
-   </div>
- </div>
+        <div class="modal fade" id="ignismyModal" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label=""><span>×</span></button>
+                     </div>
+					
+                    <div class="modal-body">
+                       
+						<div class="thank-you-pop">
+							<img src="http://goactionstations.co.uk/wp-content/uploads/2017/03/Green-Round-Tick.png" alt=""/>
+							<h1>Gracias por tu compra!</h1>
+							<p>Tu solicitud ha sido recivida con exito.</p>
+							
+							
+ 						</div>
+                         
+                    </div>
+					
+                </div>
+            </div>
+        </div>
       </div>
     );
   }
