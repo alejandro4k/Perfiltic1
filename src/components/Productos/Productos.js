@@ -20,6 +20,10 @@ class Productos extends Component {
         this.setState({
           listCategoria: res.data
         });
+        if(res.data==false){
+            document.getElementById("btnSaveProducto").disabled = true;
+
+        }
        
       }
     );
