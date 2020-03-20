@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/Perfiltic1/static/css/main.b634bfcf.chunk.css",
-    "main.js": "/Perfiltic1/static/js/main.d998d175.chunk.js",
-    "main.js.map": "/Perfiltic1/static/js/main.d998d175.chunk.js.map",
+    "main.css": "/Perfiltic1/static/css/main.465196d8.chunk.css",
+    "main.js": "/Perfiltic1/static/js/main.fcbad05a.chunk.js",
+    "main.js.map": "/Perfiltic1/static/js/main.fcbad05a.chunk.js.map",
     "runtime-main.js": "/Perfiltic1/static/js/runtime-main.10883f9b.js",
     "runtime-main.js.map": "/Perfiltic1/static/js/runtime-main.10883f9b.js.map",
     "static/js/2.0bfa852b.chunk.js": "/Perfiltic1/static/js/2.0bfa852b.chunk.js",
     "static/js/2.0bfa852b.chunk.js.map": "/Perfiltic1/static/js/2.0bfa852b.chunk.js.map",
     "index.html": "/Perfiltic1/index.html",
-    "precache-manifest.37ddf0fc2eb9cf7b5c8b0a0f1e919a97.js": "/Perfiltic1/precache-manifest.37ddf0fc2eb9cf7b5c8b0a0f1e919a97.js",
+    "precache-manifest.aea81d9ba886560579a733bc55dcb0a3.js": "/Perfiltic1/precache-manifest.aea81d9ba886560579a733bc55dcb0a3.js",
     "service-worker.js": "/Perfiltic1/service-worker.js",
-    "static/css/main.b634bfcf.chunk.css.map": "/Perfiltic1/static/css/main.b634bfcf.chunk.css.map",
+    "static/css/main.465196d8.chunk.css.map": "/Perfiltic1/static/css/main.465196d8.chunk.css.map",
     "static/js/2.0bfa852b.chunk.js.LICENSE.txt": "/Perfiltic1/static/js/2.0bfa852b.chunk.js.LICENSE.txt",
     "static/media/logo.svg": "/Perfiltic1/static/media/logo.5d5d9eef.svg",
     "static/media/logoperfiltic.png": "/Perfiltic1/static/media/logoperfiltic.caeb5051.png"
@@ -18,7 +18,7 @@
   "entrypoints": [
     "static/js/runtime-main.10883f9b.js",
     "static/js/2.0bfa852b.chunk.js",
-    "static/css/main.b634bfcf.chunk.css",
-    "static/js/main.d998d175.chunk.js"
+    "static/css/main.465196d8.chunk.css",
+    "static/js/main.fcbad05a.chunk.js"
   ]
 }
