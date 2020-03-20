@@ -36,19 +36,19 @@ class Menu extends Component {
   render() {
     if(this.props.rol){
       MenuContent =      <div className="list-group list-group-flush">
-      <a
-          href="#"
-          className="list-group-item list-group-item-action bg-light"
-          onClick={e => this.changeComponent(3)}
-        >
-          Productos
-        </a>
         <a
           href="#"
           className="list-group-item list-group-item-action bg-light"
           onClick={e => this.changeComponent(1)}
         >
           Gestionar Productos
+        </a>
+      <a
+          href="#"
+          className="list-group-item list-group-item-action bg-light"
+          onClick={e => this.changeComponent(3)}
+        >
+          Catalogo
         </a>
         <a
           href="#"
