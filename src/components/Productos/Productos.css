@@ -1,0 +1,15 @@
+*{
+    margin: 0px;
+    padding: 0x;
+}
+.margen{
+    margin-top: 30px;
+}
+#btnAddProducto{
+    margin-bottom: 30px;
+}
+.cardwith{
+    width: 18rem;
+    margin-bottom: 30px;
+}
+
