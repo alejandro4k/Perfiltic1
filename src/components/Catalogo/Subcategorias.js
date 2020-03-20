@@ -43,6 +43,8 @@ class Subcategorias extends Component{
                 </div>
               );
             });
+          }else{
+              cardCategorias =<h1>No hay registros</h1>
           }
         return(
            
