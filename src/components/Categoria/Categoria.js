@@ -52,6 +52,7 @@ class Categoria extends Component {
     }
   }
   disableForm(idForm){
+      console.log("entra disable");
     var form = document.getElementById(idForm);
     var elements = form.elements;
     for (var i = 0, len = elements.length; i < len; ++i) {
@@ -69,7 +70,7 @@ class Categoria extends Component {
     e.preventDefault();
     if (this.props.validarFormulario("formCategoria")) {
        
-        var spiner = document.getElementById("spinerMain");
+        var spiner = document.getElementById("spinerMain2");
       spiner.style.display="inline-block";
       this.disableForm("formCategoria");
         var dataform = new FormData();
@@ -212,7 +213,7 @@ class Categoria extends Component {
                 onClick={e => this.addCategoria(e)}
                 class="btn btn-primary"
               >
-                  <span class="spinner-border spinner-border-sm" id="spinerMain" role="status" aria-hidden="true"></span>
+                  <span class="spinner-border spinner-border-sm" id="spinerMain2" role="status" aria-hidden="true"></span>
                 Agregar
               </button>
             </form>
