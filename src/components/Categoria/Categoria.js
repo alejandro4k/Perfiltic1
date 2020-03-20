@@ -52,7 +52,7 @@ class Categoria extends Component {
     }
   }
   disableForm(idForm){
-      console.log("entra disable");
+    
     var form = document.getElementById(idForm);
     var elements = form.elements;
     for (var i = 0, len = elements.length; i < len; ++i) {
@@ -91,9 +91,9 @@ class Categoria extends Component {
           }else{
               alert(res.data.msj)
           }
+          spiner.style.display="none";
+          this.enableForm("formCategoria");
         });
-        spiner.style.display="none";
-        this.enableForm("formCategoria");
         
     }
   }
