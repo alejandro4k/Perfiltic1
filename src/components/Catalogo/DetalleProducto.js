@@ -15,7 +15,7 @@ class DetalleProducto extends Component {
         var data = new FormData();
        
         data.append("id_producto",this.props.idProducto);
-        Axios.post("http://localhost/ApiPerfiltic/Main/getDetailProducto",data).then(res=>{
+        Axios.post("https://apiperfiltic.herokuapp.com/Main/getDetailProducto",data).then(res=>{
             
             this.setState({
                 objProducto: res.data

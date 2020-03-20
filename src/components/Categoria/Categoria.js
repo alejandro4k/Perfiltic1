@@ -16,7 +16,7 @@ class Categoria extends Component {
   }
   listarCategoriasP(e) {
     e.preventDefault();
-    Axios.get("http://localhost/ApiPerfiltic/Main/listarCategoriasPadre").then(
+    Axios.get("https://apiperfiltic.herokuapp.com/Main/listarCategoriasPadre").then(
       res => {
         this.setState({
           listCategoriaP: res.data
@@ -39,7 +39,7 @@ class Categoria extends Component {
         document.getElementById("categoriaPadre").value
       );
       Axios.post(
-        "http://localhost/ApiPerfiltic/Main/addCategoriaPadre",
+        "https://apiperfiltic.herokuapp.com/Main/addCategoriaPadre",
         dataform
       ).then(res => {
         if (res.data.status) {
@@ -61,7 +61,7 @@ class Categoria extends Component {
         dataform.append("image",this.state.selectedFile, this.state.selectedFile.name)
         dataform.append("id_catPadre",document.getElementById("selectCatPadre").value);
         Axios.post(
-          "http://localhost/ApiPerfiltic/Main/addCategoria",
+          "https://apiperfiltic.herokuapp.com/Main/addCategoria",
           dataform
         ).then(res => {
           console.log(res.data);

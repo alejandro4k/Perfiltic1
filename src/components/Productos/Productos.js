@@ -14,7 +14,7 @@ class Productos extends Component {
     };
   }
   componentDidMount() {
-    Axios.get("http://localhost/ApiPerfiltic/Main/listarCategorias").then(
+    Axios.get("https://apiperfiltic.herokuapp.com/Main/listarCategorias").then(
       res => {
         this.setState({
           listCategoria: res.data
@@ -25,7 +25,7 @@ class Productos extends Component {
       }
     );
 
-    Axios.get("http://localhost/ApiPerfiltic/Main/getAllProductos").then(res => {
+    Axios.get("https://apiperfiltic.herokuapp.com/Main/getAllProductos").then(res => {
       console.log(res.data);
       this.setState({
         listProductos: res.data
@@ -67,7 +67,7 @@ class Productos extends Component {
       }
 
       Axios.post(
-        "http://localhost/ApiPerfiltic/Main/addProducto",
+        "https://apiperfiltic.herokuapp.com/Main/addProducto",
         dataform
       ).then(res => {
         if (res.data) {
@@ -90,7 +90,7 @@ class Productos extends Component {
           eventFire(document.getElementById('btnCloseModal'), 'click');
 
           
-    Axios.get("http://localhost/ApiPerfiltic/Main/getAllProductos").then(res => {
+    Axios.get("https://apiperfiltic.herokuapp.com/Main/getAllProductos").then(res => {
         console.log(res.data);
         this.setState({
           listProductos: res.data

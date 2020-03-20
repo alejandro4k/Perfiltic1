@@ -12,7 +12,7 @@ class ProductosSubCategoria extends Component {
   componentDidMount() {
     var data = new FormData();
     data.append("id_categoria", this.props.idCategoria);
-    Axios.post("http://localhost/ApiPerfiltic/Main/getProductos", data).then(
+    Axios.post("https://apiperfiltic.herokuapp.com/Main/getProductos", data).then(
       res => {
         this.setState({
           listProductos: res.data

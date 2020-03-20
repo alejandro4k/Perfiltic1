@@ -31,7 +31,7 @@ class Login extends Component {
         dataform.append("username", user);
         dataform.append("pass", pass);
         Axios.post(
-          "http://localhost/ApiPerfiltic/Main/Register",
+          "https://apiperfiltic.herokuapp.com/Main/Register",
           dataform
         ).then(res => {
           console.log(res.data);
@@ -76,7 +76,7 @@ class Login extends Component {
         'Authorization': 'JWT fefege...'
       }
       */
-    Axios.post("http://localhost/ApiPerfiltic/Main/Validate", dataform).then(
+    Axios.post("https://apiperfiltic.herokuapp.com/Main/Validate", dataform).then(
       res => {
         console.log(res.data);
         if (res.data.status == true) {
