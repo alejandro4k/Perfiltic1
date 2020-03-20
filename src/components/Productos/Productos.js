@@ -26,7 +26,7 @@ class Productos extends Component {
     );
 
     Axios.get("https://apiperfiltic.herokuapp.com/Main/getAllProductos").then(res => {
-      console.log(res.data);
+     
       this.setState({
         listProductos: res.data
       });
@@ -34,7 +34,7 @@ class Productos extends Component {
   }
   fileSelect = event => {
     this.setState({ selectedFile: event.target.files });
-    console.log(event.target.files);
+  
   };
 
   transformToDolar(e) {
@@ -91,7 +91,7 @@ class Productos extends Component {
 
           
     Axios.get("https://apiperfiltic.herokuapp.com/Main/getAllProductos").then(res => {
-        console.log(res.data);
+       
         this.setState({
           listProductos: res.data
         });

@@ -34,7 +34,7 @@ class Login extends Component {
           "https://apiperfiltic.herokuapp.com/Main/Register",
           dataform
         ).then(res => {
-          console.log(res.data);
+        
           if (res.data.status) {
             localStorage.setItem("id_user", res.data.id_usuario);
             if(res.data.rol == 'admin'){
@@ -78,7 +78,7 @@ class Login extends Component {
       */
     Axios.post("https://apiperfiltic.herokuapp.com/Main/Validate", dataform).then(
       res => {
-        console.log(res.data);
+        
         if (res.data.status == true) {
           localStorage.setItem("id_user", res.data.id_usuario);
           if(res.data.rol == 'admin'){

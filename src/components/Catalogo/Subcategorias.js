@@ -13,7 +13,7 @@ class Subcategorias extends Component{
         var data = new FormData();
         data.append("idCatPadre",this.props.idCatPadre)
         Axios.post("https://apiperfiltic.herokuapp.com/Main/getCategorias",data).then(res=>{
-            console.log(res.data)
+           
             this.setState({
                 listCategorias:res.data
             })

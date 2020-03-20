@@ -20,7 +20,7 @@ class Catalogo extends Component {
   componentDidMount() {
     Axios.get("https://apiperfiltic.herokuapp.com/Main/listarCategoriasPadre").then(
       res => {
-        console.log(res.data);
+        
         this.setState({
           listCategorias: res.data
         });

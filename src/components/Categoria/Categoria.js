@@ -64,7 +64,7 @@ class Categoria extends Component {
           "https://apiperfiltic.herokuapp.com/Main/addCategoria",
           dataform
         ).then(res => {
-          console.log(res.data);
+         
 
           if(res.data){
               alert("categoria creada exitosamente.");
