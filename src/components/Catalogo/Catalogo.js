@@ -14,37 +14,36 @@ class Catalogo extends Component {
       listCategorias: [],
       subcomponent: 1,
       idVar: 0,
-      idCatPadre:0
+      idCatPadre: 0
     };
   }
   componentDidMount() {
-    Axios.get("https://apiperfiltic.herokuapp.com/Main/listarCategoriasPadre").then(
-      res => {
-        
-        this.setState({
-          listCategorias: res.data
-        });
-      }
-    );
+    document.getElementById("loadingSpinner").style.display = "block";
+    Axios.get(
+      "https://apiperfiltic.herokuapp.com/Main/listarCategoriasPadre"
+    ).then(res => {
+      this.setState({
+        listCategorias: res.data
+      });
+      document.getElementById("loadingSpinner").style.display = "none";
+    });
   }
   changeSubcomponent(e, idVar) {
-    
     this.setState({
       subcomponent: e,
       idVar: idVar
     });
   }
-  getIdCategoria(e,value){
-      this.setState({
-          idCatPadre:value,
-          subcomponent:e
-      })
-
+  getIdCategoria(e, value) {
+    this.setState({
+      idCatPadre: value,
+      subcomponent: e
+    });
   }
-  onBack(e){
-      this.setState({
-          subcomponent:e
-      })
+  onBack(e) {
+    this.setState({
+      subcomponent: e
+    });
   }
   render() {
     if (this.state.listCategorias) {
@@ -66,8 +65,8 @@ class Catalogo extends Component {
         );
       });
       CatalogoContent = <div className="row">{cardCategorias}</div>;
-    }else{
-        CatalogoContent=<h1>No hay productos.</h1>
+    } else {
+      CatalogoContent = <h1>No hay productos.</h1>;
     }
     switch (this.state.subcomponent) {
       case 1:
@@ -78,7 +77,7 @@ class Catalogo extends Component {
           <Subcategoria
             changeSubcomponente={this.changeSubcomponent.bind(this)}
             idCatPadre={this.state.idCatPadre}
-            onBack ={this.onBack.bind(this)}
+            onBack={this.onBack.bind(this)}
           />
         );
         break;
@@ -87,7 +86,7 @@ class Catalogo extends Component {
           <ProductosCat
             changeSubcomponente={this.changeSubcomponent.bind(this)}
             idCategoria={this.state.idVar}
-            onBack ={this.onBack.bind(this)}
+            onBack={this.onBack.bind(this)}
           />
         );
         break;
@@ -96,13 +95,31 @@ class Catalogo extends Component {
           <DetalleProducto
             changeSubcomponente={this.changeSubcomponent.bind(this)}
             idProducto={this.state.idVar}
-            onBack ={this.onBack.bind(this)}
+            onBack={this.onBack.bind(this)}
           />
         );
         break;
     }
 
-    return <div className="container margen pading1">{contenido}</div>;
+    return (
+      <div className="container margen pading1">
+        <div id="loadingSpinner">
+          <div class="spinner-grow text-info" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+          <div class="spinner-grow text-info" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+          <div class="spinner-grow text-info" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+          <div class="spinner-grow text-info" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+        </div>
+        {contenido}
+      </div>
+    );
   }
 }
 export default Catalogo;

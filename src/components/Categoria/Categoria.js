@@ -51,11 +51,27 @@ class Categoria extends Component {
       });
     }
   }
+  disableForm(idForm){
+    var form = document.getElementById(idForm);
+    var elements = form.elements;
+    for (var i = 0, len = elements.length; i < len; ++i) {
+        elements[i].readOnly = true;
+    }
+  }
+  enableForm(idForm){
+    var form = document.getElementById(idForm);
+    var elements = form.elements;
+    for (var i = 0, len = elements.length; i < len; ++i) {
+        elements[i].readOnly = false;
+    }
+  }
   addCategoria(e) {
     e.preventDefault();
     if (this.props.validarFormulario("formCategoria")) {
        
-        
+        var spiner = document.getElementById("spinerMain");
+      spiner.style.display="inline-block";
+      this.disableForm("formCategoria");
         var dataform = new FormData();
         dataform.append("categoria", document.getElementById("categoria").value);
         dataform.append("image",this.state.selectedFile, this.state.selectedFile.name)
@@ -75,6 +91,8 @@ class Categoria extends Component {
               alert(res.data.msj)
           }
         });
+        spiner.style.display="none";
+        this.enableForm("formCategoria");
         
     }
   }
@@ -194,6 +212,7 @@ class Categoria extends Component {
                 onClick={e => this.addCategoria(e)}
                 class="btn btn-primary"
               >
+                  <span class="spinner-border spinner-border-sm" id="spinerMain" role="status" aria-hidden="true"></span>
                 Agregar
               </button>
             </form>

@@ -10,6 +10,7 @@ class ProductosSubCategoria extends Component {
     };
   }
   componentDidMount() {
+    document.getElementById("loadingSpinner").style.display = "block";
     var data = new FormData();
     data.append("id_categoria", this.props.idCategoria);
     Axios.post("https://apiperfiltic.herokuapp.com/Main/getProductos", data).then(
@@ -17,6 +18,7 @@ class ProductosSubCategoria extends Component {
         this.setState({
           listProductos: res.data
         });
+        document.getElementById("loadingSpinner").style.display = "none";
       }
     );
   }
@@ -132,14 +134,32 @@ class ProductosSubCategoria extends Component {
       cardProductos = <h1>No hay productos.</h1>;
     }
     return (
+      
+          
+
       <div className="row">
         <div className="col-12">
           <button type="button" onClick={()=>this.props.onBack(2)} id="btnBack" class="btn btn-info">
             Atras
           </button>
+          <div id="loadingSpinner">
+          <div class="spinner-grow text-info" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+          <div class="spinner-grow text-info" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+          <div class="spinner-grow text-info" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+          <div class="spinner-grow text-info" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+        </div>
         </div>
         {cardProductos}
       </div>
+      
     );
   }
 }

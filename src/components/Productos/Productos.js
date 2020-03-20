@@ -14,14 +14,13 @@ class Productos extends Component {
     };
   }
   componentDidMount() {
+    document.getElementById("loadingSpinner").style.display = "block";
     Axios.get("https://apiperfiltic.herokuapp.com/Main/listarCategorias").then(
       res => {
         this.setState({
           listCategoria: res.data
         });
-        if (res.data == false) {
-          document.getElementById("btnSaveProducto").disabled = true;
-        }
+       
       }
     );
 
@@ -30,6 +29,7 @@ class Productos extends Component {
       this.setState({
         listProductos: res.data
       });
+      document.getElementById("loadingSpinner").style.display = "none";
     });
   }
   fileSelect = event => {
@@ -43,10 +43,27 @@ class Productos extends Component {
     var valor = number / 4158;
     document.getElementById("precioDolar").value = Math.round(valor);
   }
+  disableForm(idForm){
+    var form = document.getElementById(idForm);
+    var elements = form.elements;
+    for (var i = 0, len = elements.length; i < len; ++i) {
+        elements[i].readOnly = true;
+    }
+  }
+  enableForm(idForm){
+    var form = document.getElementById(idForm);
+    var elements = form.elements;
+    for (var i = 0, len = elements.length; i < len; ++i) {
+        elements[i].readOnly = false;
+    }
+  }
   addProducto(e) {
     e.preventDefault();
     if (this.props.validarFormulario("formAddProductos")) {
       var dataform = new FormData();
+      var spiner = document.getElementById("spinerMain");
+      spiner.style.display="inline-block";
+      this.disableForm("formAddProductos");
       dataform.append("nombre", document.getElementById("nombre").value);
       dataform.append("precio", document.getElementById("precio").value);
       dataform.append(
@@ -61,6 +78,7 @@ class Productos extends Component {
         "id_categoria",
         document.getElementById("selectCategoria").value
       );
+      
 
       for (let i = 0; i < this.state.selectedFile.length; i++) {
         dataform.append(`images[${i}]`, this.state.selectedFile[i]);
@@ -71,34 +89,37 @@ class Productos extends Component {
         dataform
       ).then(res => {
         if (res.data) {
-          alert("Producto Agregado exitosamente");
-
-          document.getElementById("nombre").value = "";
-          document.getElementById("precio").value = "";
-          document.getElementById("precioDolar").value = "";
-          document.getElementById("descripcion").value = "";
-          document.getElementById("imgProducto").value = "";
+            alert("Producto Agregado exitosamente");
+            
+            document.getElementById("nombre").value = "";
+            document.getElementById("precio").value = "";
+            document.getElementById("precioDolar").value = "";
+            document.getElementById("descripcion").value = "";
+            document.getElementById("imgProducto").value = "";
           function eventFire(el, etype){
-            if (el.fireEvent) {
-              el.fireEvent('on' + etype);
+              if (el.fireEvent) {
+                  el.fireEvent('on' + etype);
             } else {
-              var evObj = document.createEvent('Events');
-              evObj.initEvent(etype, true, false);
-              el.dispatchEvent(evObj);
+                var evObj = document.createEvent('Events');
+                evObj.initEvent(etype, true, false);
+                el.dispatchEvent(evObj);
             }
-          }
-          eventFire(document.getElementById('btnCloseModal'), 'click');
-
-          
-    Axios.get("https://apiperfiltic.herokuapp.com/Main/getAllProductos").then(res => {
-       
-        this.setState({
-          listProductos: res.data
-        });
-      });
-        } else {
-          alert("error al agregar el producto.");
         }
+        eventFire(document.getElementById('btnCloseModal'), 'click');
+        
+        
+        Axios.get("https://apiperfiltic.herokuapp.com/Main/getAllProductos").then(res => {
+            
+            this.setState({
+                listProductos: res.data
+            });
+        });
+    } else {
+        alert("error al agregar el producto.");
+        }
+        spiner.style.display="none";
+        this.enableForm("formAddProductos");
+        
       });
     }
   }
@@ -232,6 +253,20 @@ class Productos extends Component {
           Agregar Productos
         </button>
 
+        <div id="loadingSpinner">
+          <div class="spinner-grow text-info" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+          <div class="spinner-grow text-info" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+          <div class="spinner-grow text-info" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+          <div class="spinner-grow text-info" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+        </div>
         <div className="row">
         {cardProductos}
         </div>
@@ -347,7 +382,7 @@ class Productos extends Component {
                   id="btnCloseModal"
                   data-dismiss="modal"
                 >
-                  Close
+                  Cerrar
                 </button>
                 <button
                   type="button"
@@ -355,7 +390,8 @@ class Productos extends Component {
                   onClick={e => this.addProducto(e)}
                   class="btn btn-primary"
                 >
-                  Save changes
+                    <span class="spinner-border spinner-border-sm" id="spinerMain" role="status" aria-hidden="true"></span>
+                  Guardar
                 </button>
               </div>
             </div>
