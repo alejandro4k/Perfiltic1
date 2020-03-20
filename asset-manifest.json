@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Perfiltic1/static/css/main.465196d8.chunk.css",
+    "main.css": "/Perfiltic1/static/css/main.c5af92ad.chunk.css",
     "main.js": "/Perfiltic1/static/js/main.16cc3814.chunk.js",
     "main.js.map": "/Perfiltic1/static/js/main.16cc3814.chunk.js.map",
     "runtime-main.js": "/Perfiltic1/static/js/runtime-main.10883f9b.js",
@@ -8,9 +8,9 @@
     "static/js/2.0bfa852b.chunk.js": "/Perfiltic1/static/js/2.0bfa852b.chunk.js",
     "static/js/2.0bfa852b.chunk.js.map": "/Perfiltic1/static/js/2.0bfa852b.chunk.js.map",
     "index.html": "/Perfiltic1/index.html",
-    "precache-manifest.8f32321c823fb6ac4a70194e57668fbe.js": "/Perfiltic1/precache-manifest.8f32321c823fb6ac4a70194e57668fbe.js",
+    "precache-manifest.77b8c2c2efdc55fb662ea2f7721b124b.js": "/Perfiltic1/precache-manifest.77b8c2c2efdc55fb662ea2f7721b124b.js",
     "service-worker.js": "/Perfiltic1/service-worker.js",
-    "static/css/main.465196d8.chunk.css.map": "/Perfiltic1/static/css/main.465196d8.chunk.css.map",
+    "static/css/main.c5af92ad.chunk.css.map": "/Perfiltic1/static/css/main.c5af92ad.chunk.css.map",
     "static/js/2.0bfa852b.chunk.js.LICENSE.txt": "/Perfiltic1/static/js/2.0bfa852b.chunk.js.LICENSE.txt",
     "static/media/logo.svg": "/Perfiltic1/static/media/logo.5d5d9eef.svg",
     "static/media/logoperfiltic.png": "/Perfiltic1/static/media/logoperfiltic.caeb5051.png"
@@ -18,7 +18,7 @@
   "entrypoints": [
     "static/js/runtime-main.10883f9b.js",
     "static/js/2.0bfa852b.chunk.js",
-    "static/css/main.465196d8.chunk.css",
+    "static/css/main.c5af92ad.chunk.css",
     "static/js/main.16cc3814.chunk.js"
   ]
 }
